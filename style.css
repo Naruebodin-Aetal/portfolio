@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Sora:wght@600;700&display=swap');
+
+:root {
+    --bg: #f4f4f4;
+    --surface: #ffffff;
+    --text: #1f2937;
+    --text-muted: #4b5563;
+    --accent: #333333;
+    --stroke: #dddddd;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px; /* ลดขนาดพื้นฐานลงจาก 15px */
+    line-height: 1.6;
+    color: var(--text);
+    background-color: var(--bg);
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    backdrop-filter: blur(8px);
+    background: rgba(51, 51, 51, 0.92);
+    padding: 10px 16px; /* ลดความสูง Header */
+    text-align: center;
+    border-bottom: 1px solid var(--stroke);
+}
+
+header h1 {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.2rem; /* ขนาดเล็กลง */
+    letter-spacing: 0.02em;
+}
+
+header nav {
+    margin-top: 4px;
+}
+
+header nav a {
+    color: #ffffff;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+header nav a:hover {
+    color: #f1f1f1;
+}
+
+section {
+    max-width: 800px; /* ลดความกว้างสูงสุดลงเพื่อให้ดู Compact */
+    margin: 16px auto;
+    padding: 20px; /* ลด Padding ภายใน */
+    text-align: center;
+    background: var(--surface);
+    border: 1px solid var(--stroke);
+    border-radius: 12px; /* ลดความโค้งให้ดูคมขึ้น */
+}
+
+section h2 {
+    font-family: 'Sora', sans-serif;
+    margin-bottom: 12px;
+    font-size: 1.2rem;
+    color: var(--accent);
+}
+
+#about p {
+    max-width: 600px;
+    margin: 0 auto 4px;
+    font-size: 0.9rem;
+}
+
+.profile {
+    width: 100px; /* ลดขนาดรูปโปรไฟล์ */
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    border: 2px solid var(--stroke);
+}
+
+/* --- Skills Tags Style --- */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px; /* ระยะห่างเล็กลง */
+}
+
+.skill-tag {
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    color: #334155;
+    padding: 4px 12px; /* ขนาดกะทัดรัด */
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+/* --- Projects Section --- */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* ปรับ Grid ให้การ์ดเล็กลง */
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.project-card {
+    background: #ffffff;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid var(--stroke);
+    font-size: 0.8rem;
+    color: var(--text);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.project-card.active {
+    border-color: #64748b;
+    background: #f8fafc;
+}
+
+.project-detail {
+    display: grid;
+    grid-template-columns: 150px 1fr; /* ปรับขนาดสัดส่วนรายละเอียด */
+    gap: 15px;
+    padding: 12px;
+    background: #ffffff;
+    border: 1px solid var(--stroke);
+    border-radius: 8px;
+    text-align: left;
+}
+
+#project-image {
+    width: 100%;
+    height: 100px; /* ลดความสูงรูปโปรเจกต์ */
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.project-detail-content h3 {
+    font-size: 1rem;
+    margin-bottom: 4px;
+}
+
+.project-detail-content p {
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+}
+
+/* --- Certifications --- */
+.cert-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+}
+
+.cert-card {
+    background: #ffffff;
+    border: 1px solid var(--stroke);
+    padding: 8px;
+    font-size: 0.8rem;
+    border-radius: 6px;
+    color: #334155;
+    text-decoration: none;
+}
+
+.cert-card:hover {
+    border-color: #64748b;
+    color: #1f2937;
+}
+
+footer {
+    background: #333333;
+    font-size: 0.75rem;
+    padding: 12px;
+    color: #ffffff;
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+    .project-detail {
+        grid-template-columns: 1fr;
+    }
+    .cert-grid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>My Portfolio</h1>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#certifications">Certification</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- About -->
+    <section id="about">
+        <h2>About Me</h2>
+        <img src="assets/profile.png" class="profile" alt="Profile photo">
+        <p>Naruebodin Aetal</p>
+        <p>Tester</p>
+        <p>Hello! I'm a passionate Software Tester dedicated to delivering high-quality applications. Experienced in both manual and automated testing, with hands-on skills in Playwright and Robot Framework. I enjoy finding hidden bugs and ensuring every product works flawlessly for users.
+.</p>
+    </section>
+
+    <section id="skills">
+        <h2>Skills ✨</h2>
+        <div class="skills-container">
+            <span class="skill-tag">Flutter</span>
+            <span class="skill-tag">Dart</span>
+            <span class="skill-tag">HTML</span>
+            <span class="skill-tag">CSS</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">Nodejs</span>
+            <span class="skill-tag">Java</span>
+            <span class="skill-tag">SpringBoot</span>
+            <span class="skill-tag">Playwright</span>
+            <span class="skill-tag">Robot Framework</span>
+            <span class="skill-tag">Git/Github</span>
+            <span class="skill-tag">Figma</span>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+        <h2>My Projects</h2>
+        <div class="project-grid">
+            <button class="project-card active" type="button"
+                data-title="Robot framework"
+                data-image="assets\robot.png"
+                data-link="https://github.com/Naruebodin-Aetal/learn_robot.git"
+                data-description="Automation testing with Robot Framework, focused on readable test suites and maintainable keyword design.">
+                Robot framework
+            </button>
+
+            <button class="project-card" type="button"
+                data-title="Playwright"
+                data-image="assets\playwright.png"
+                data-link="https://github.com/Naruebodin-Aetal/learn_playwright.git"
+                data-description="End-to-end web testing with Playwright including selectors, assertions, and test flow structure.">
+                Playwright
+            </button>
+
+            <button class="project-card" type="button"
+                data-title="Flushing Toilet App"
+                data-image="assets/flushing.png"
+                data-link="https://github.com/Naruebodin-Aetal/flushing_toilet_app.git"
+                data-description="Mobile app interface for controlling and monitoring a smart flushing system.">
+                Flushing Toilet App
+            </button>
+
+            <button class="project-card" type="button"
+                data-title="Flushing Toilet IoT"
+                data-image="\assets\IoT.jpg"
+                data-link="https://github.com/Naruebodin-Aetal/flushing_toilet_iot.git"
+                data-description="IoT side of the flushing project, handling device integration and communication workflow.">
+                Flushing Toilet IoT
+            </button>
+
+            <button class="project-card" type="button"
+                data-title="Vender_machine App"
+                data-image="assets\vender.png"
+                data-link="https://github.com/Naruebodin-Aetal/Vender_machine.git"
+                data-description="Application prototype for vending machine logic, user flow, and product handling.">
+                Vender_machine App
+            </button>
+
+            <button class="project-card" type="button"
+                data-title="Genshin-API"
+                data-image="assets/api.png"
+                data-link="https://github.com/Naruebodin-Aetal/Genshin-API.git"
+                data-description="API learning project using Genshin Impact API, practicing request/response handling.">
+                Genshin-API
+            </button>
+        </div>
+
+        <article class="project-detail" aria-live="polite">
+            <img id="project-image" src="assets/excercite.png" alt="Project preview">
+            <div class="project-detail-content">
+                <h3 id="project-title">Robot framework</h3>
+                <p id="project-description">Automation testing with Robot Framework, focused on readable test suites and maintainable keyword design.</p>
+                <a id="project-link" class="project-link" href="https://github.com/Naruebodin-Aetal/learn_robot.git" target="_blank">View repository</a>
+            </div>
+        </article>
+
+    </section>
+    <!-- Certifications -->
+    <section id="certifications">
+        <h2>Certifications</h2>
+        <div class="cert-grid">
+            <a class="cert-card" href="https://www.hackerrank.com/certificates/ad29a7ec724a" target="_blank">Node.js Certification</a>
+            <a class="cert-card" href="https://www.hackerrank.com/certificates/5f9b7728e23a" target="_blank">Python Certification</a>
+            <a class="cert-card" href="https://www.hackerrank.com/certificates/948b80e87fc3" target="_blank">CSS Certification</a>
+            <a class="cert-card" href="https://www.hackerrank.com/certificates/8ded7aac1452" target="_blank">JavaScript Certification</a>
+            <a class="cert-card" href="https://www.hackerrank.com/certificates/30b116eca918" target="_blank">เปิดโลกทักษะ AI และความปลอดภัยทางไซเบอร์</a>
+            <a class="cert-card" >Java Certification</a>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Email: pao0992174774@email.com</p>
+        <p>Phone: 065-2371302</p>
+        <a href="https://github.com/Naruebodin-Aetal" target="_blank">Github</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 My Portfolio</p>
+    </footer>
+
+    <script>
+        const projectCards = document.querySelectorAll('.project-card');
+        const projectTitle = document.getElementById('project-title');
+        const projectDescription = document.getElementById('project-description');
+        const projectImage = document.getElementById('project-image');
+        const projectLink = document.getElementById('project-link');
+
+        projectCards.forEach((card) => {
+            card.addEventListener('click', () => {
+                projectCards.forEach((item) => item.classList.remove('active'));
+                card.classList.add('active');
+
+                projectTitle.textContent = card.dataset.title;
+                projectDescription.textContent = card.dataset.description;
+                projectImage.src = card.dataset.image;
+                projectImage.alt = card.dataset.title + ' preview';
+                projectLink.href = card.dataset.link;
+            });
+        });
+    </script>
+
+</body>
+</html>
