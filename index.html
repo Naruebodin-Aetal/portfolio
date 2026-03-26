@@ -52,7 +52,7 @@
         <div class="project-grid">
             <button class="project-card active" type="button"
                 data-title="Robot framework"
-                data-image="assets\robot.png"
+                data-image="assets/robot.png"
                 data-link="https://github.com/Naruebodin-Aetal/learn_robot.git"
                 data-description="Automation testing with Robot Framework, focused on readable test suites and maintainable keyword design.">
                 Robot framework
@@ -60,7 +60,7 @@
 
             <button class="project-card" type="button"
                 data-title="Playwright"
-                data-image="assets\playwright.png"
+                data-image="assets/playwright.png"
                 data-link="https://github.com/Naruebodin-Aetal/learn_playwright.git"
                 data-description="End-to-end web testing with Playwright including selectors, assertions, and test flow structure.">
                 Playwright
@@ -76,7 +76,7 @@
 
             <button class="project-card" type="button"
                 data-title="Flushing Toilet IoT"
-                data-image="\assets\IoT.jpg"
+                data-image="assets/IoT.jpg"
                 data-link="https://github.com/Naruebodin-Aetal/flushing_toilet_iot.git"
                 data-description="IoT side of the flushing project, handling device integration and communication workflow.">
                 Flushing Toilet IoT
@@ -84,7 +84,7 @@
 
             <button class="project-card" type="button"
                 data-title="Vender_machine App"
-                data-image="assets\vender.png"
+                data-image="assets/vender.png"
                 data-link="https://github.com/Naruebodin-Aetal/Vender_machine.git"
                 data-description="Application prototype for vending machine logic, user flow, and product handling.">
                 Vender_machine App
@@ -96,6 +96,14 @@
                 data-link="https://github.com/Naruebodin-Aetal/Genshin-API.git"
                 data-description="API learning project using Genshin Impact API, practicing request/response handling.">
                 Genshin-API
+            </button>
+
+            <button class="project-card" type="button"
+                data-title="Exercise App"
+                data-image="assets/excercite.png"
+                data-link="https://github.com/Naruebodin-Aetal/pagetest2.git"
+                data-description="A simple exercise tracking app with basic features for logging workouts and monitoring progress.">
+                Exercise App
             </button>
         </div>
 
@@ -117,8 +125,8 @@
             <a class="cert-card" href="https://www.hackerrank.com/certificates/5f9b7728e23a" target="_blank">Python Certification</a>
             <a class="cert-card" href="https://www.hackerrank.com/certificates/948b80e87fc3" target="_blank">CSS Certification</a>
             <a class="cert-card" href="https://www.hackerrank.com/certificates/8ded7aac1452" target="_blank">JavaScript Certification</a>
-            <a class="cert-card" href="https://www.hackerrank.com/certificates/30b116eca918" target="_blank">เปิดโลกทักษะ AI และความปลอดภัยทางไซเบอร์</a>
-            <a class="cert-card" >Java Certification</a>
+            <a class="cert-card" href="https://www.hackerrank.com/certificates/30b116eca918" target="_blank">SQL Certification</a>
+            <a class="cert-card" href="assets/certificate/139.pdf" target="_blank">เปิดโลกทักษะ AI และความปลอดภัยทางไซเบอร์</a>
         </div>
     </section>
 
@@ -135,12 +143,20 @@
         <p>© 2026 My Portfolio</p>
     </footer>
 
+    <div id="image-modal" class="image-modal" aria-hidden="true">
+        <button id="modal-close" class="modal-close" type="button" aria-label="Close image">×</button>
+        <img id="modal-image" class="modal-image" src="" alt="Expanded project image">
+    </div>
+
     <script>
         const projectCards = document.querySelectorAll('.project-card');
         const projectTitle = document.getElementById('project-title');
         const projectDescription = document.getElementById('project-description');
         const projectImage = document.getElementById('project-image');
         const projectLink = document.getElementById('project-link');
+        const imageModal = document.getElementById('image-modal');
+        const modalImage = document.getElementById('modal-image');
+        const modalClose = document.getElementById('modal-close');
 
         projectCards.forEach((card) => {
             card.addEventListener('click', () => {
@@ -153,6 +169,36 @@
                 projectImage.alt = card.dataset.title + ' preview';
                 projectLink.href = card.dataset.link;
             });
+        });
+
+        projectImage.addEventListener('click', () => {
+            modalImage.src = projectImage.src;
+            modalImage.alt = projectImage.alt;
+            imageModal.classList.add('show');
+            imageModal.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+        });
+
+        modalClose.addEventListener('click', () => {
+            imageModal.classList.remove('show');
+            imageModal.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+        });
+
+        imageModal.addEventListener('click', (event) => {
+            if (event.target === imageModal) {
+                imageModal.classList.remove('show');
+                imageModal.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+            }
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && imageModal.classList.contains('show')) {
+                imageModal.classList.remove('show');
+                imageModal.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+            }
         });
     </script>
 

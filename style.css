@@ -152,6 +152,7 @@ section h2 {
     height: 100px; /* ลดความสูงรูปโปรเจกต์ */
     object-fit: cover;
     border-radius: 6px;
+    cursor: zoom-in;
 }
 
 .project-detail-content h3 {
@@ -191,6 +192,44 @@ footer {
     font-size: 0.75rem;
     padding: 12px;
     color: #ffffff;
+}
+
+.image-modal {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.75);
+    padding: 24px;
+    z-index: 50;
+}
+
+.image-modal.show {
+    display: flex;
+}
+
+.modal-image {
+    max-width: min(960px, 92vw);
+    max-height: 86vh;
+    border-radius: 10px;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+    background: #ffffff;
+}
+
+.modal-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    color: #111827;
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
 }
 
 /* Mobile Responsive */
