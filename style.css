@@ -63,7 +63,8 @@ header nav a:hover {
 }
 
 section {
-    max-width: 800px; /* ลดความกว้างสูงสุดลงเพื่อให้ดู Compact */
+    width: max(500px, calc(100% - 32px));
+    max-width: 600px; /* ลดความกว้างสูงสุดลงเพื่อให้ดู Compact */
     margin: 16px auto;
     padding: 20px; /* ลด Padding ภายใน */
     text-align: center;
